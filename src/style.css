@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  font-family: 'Lato', 'Roboto',sans-serif;
+  font-family: 'Lato', 'Roboto', sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,7 +31,6 @@ body {
 .body-main-section-div1-lu-list {
   padding: 0;
   border: 3px solid black;
-  
 }
 
 .body-main-section-div1 {
@@ -72,7 +71,7 @@ li {
 
 button {
   background-color: transparent;
-  box-shadow: 5px 5px 0px black;
+  box-shadow: 5px 5px 0 black;
 }
 
 input {

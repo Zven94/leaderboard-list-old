@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_createList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createList */ \"./src/modules/createList.js\");\n/* harmony import */ var _modules_addNewScore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addNewScore */ \"./src/modules/addNewScore.js\");\n//import _ from 'lodash';\r\n\r\n\r\n\r\n\r\n//createList();\r\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_createList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createList */ \"./src/modules/createList.js\");\n/* harmony import */ var _modules_addNewScore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addNewScore */ \"./src/modules/addNewScore.js\");\n/* harmony import */ var _modules_refreshList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/refreshList */ \"./src/modules/refreshList.js\");\n// import _ from 'lodash';\n\n\n\n\n\n(0,_modules_createList__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_addNewScore__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n(0,_modules_refreshList__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
 
 /***/ }),
 
@@ -125,17 +125,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   addNewScore: () => (/* binding */ addNewScore)\n/* harmony export */ });\n/* harmony import */ var _createList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createList */ \"./src/modules/createList.js\");\n/* harmony import */ var _arrayList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./arrayList */ \"./src/modules/arrayList.js\");\n\r\n\r\n\r\nconst inputName = document.querySelector('.inputName');\r\nconst inputScore = document.querySelector('.inputScore');\r\nconst inputButton = document.querySelector('.inputButton');\r\nconst errorMsg = document.querySelector('#inputError');\r\nlet index = 1;\r\n\r\nfunction addNewScore() {\r\n\r\n  if (inputName.value && inputScore.value) {\r\n    errorMsg.classList.add('inputError-W');\r\n    errorMsg.classList.remove('inputError-R');\r\n    (0,_createList__WEBPACK_IMPORTED_MODULE_0__.createList)(inputName.value, inputScore.value, index);\r\n    (0,_arrayList__WEBPACK_IMPORTED_MODULE_1__.saveLocalStorage)(inputName.value, inputScore.value, index);\r\n    index += 1;\r\n  } else {\r\n    errorMsg.classList.add('inputError-R');\r\n    errorMsg.classList.remove('inputError-W');\r\n    errorMsg.innerHTML = 'Please complete both fields';\r\n  }\r\n}\r\n\r\ninputButton.addEventListener('click', addNewScore);\n\n//# sourceURL=webpack://webpack-demo/./src/modules/addNewScore.js?");
-
-/***/ }),
-
-/***/ "./src/modules/arrayList.js":
-/*!**********************************!*\
-  !*** ./src/modules/arrayList.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   saveLocalStorage: () => (/* binding */ saveLocalStorage)\n/* harmony export */ });\nconst arrayList = [];\r\n\r\nfunction saveLocalStorage(name, score, index) {\r\n  const objList = {\r\n    name: name,\r\n    score: score,\r\n    index: index,\r\n  };\r\n  arrayList.push(objList);\r\n  const arrayListString = JSON.stringify(arrayList);\r\n  localStorage.setItem(\"arrayListStringKey\", arrayListString);\r\n  console.log(arrayListx);\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack-demo/./src/modules/arrayList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ addNewScore)\n/* harmony export */ });\n/* harmony import */ var _createList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createList */ \"./src/modules/createList.js\");\n/* harmony import */ var _saveLocalStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./saveLocalStorage */ \"./src/modules/saveLocalStorage.js\");\n\n\n\nconst inputName = document.querySelector('.inputName');\nconst inputScore = document.querySelector('.inputScore');\nconst inputButton = document.querySelector('.inputButton');\nconst errorMsg = document.querySelector('#inputError');\nlet index = 0;\n\nfunction addNewScore() {\n  if (inputName.value && inputScore.value) {\n    errorMsg.classList.add('inputError-W');\n    errorMsg.classList.remove('inputError-R');\n    (0,_saveLocalStorage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(inputName.value, inputScore.value, index);\n    (0,_createList__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(index);\n    index += 1;\n  } else {\n    errorMsg.classList.add('inputError-R');\n    errorMsg.classList.remove('inputError-W');\n    errorMsg.innerHTML = 'Please complete both fields';\n  }\n}\n\ninputButton.addEventListener('click', addNewScore);\n\n//# sourceURL=webpack://webpack-demo/./src/modules/addNewScore.js?");
 
 /***/ }),
 
@@ -145,7 +135,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createList: () => (/* binding */ createList)\n/* harmony export */ });\nconst parentList = document.querySelector('.body-main-section-div1-lu-list');\r\n\r\nfunction createList(name, score, index) {\r\n\r\n  const scoreList = document.createElement('li');\r\n\r\n  parentList.appendChild(scoreList);\r\n  scoreList.innerHTML = `${index} ` + name + ' ' + score;\r\n  if (index % 2 !== 0) {\r\n    scoreList.classList.add('makeMeGray');\r\n  }\r\n}\n\n//# sourceURL=webpack://webpack-demo/./src/modules/createList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ createList),\n/* harmony export */   parentList: () => (/* binding */ parentList)\n/* harmony export */ });\n//import { getData, miArrayRecuperado } from './getFromLocalStorage';\n\nconst parentList = document.querySelector('.body-main-section-div1-lu-list');\n\nfunction createList(index) {\n\n\n  const arrayString = localStorage.getItem('arrayListStringKey');\n  const miArrayRecuperado = JSON.parse(arrayString);\n\n\n  const scoreList = document.createElement('li');\n  parentList.appendChild(scoreList);\n  scoreList.innerHTML = `${miArrayRecuperado[index].index} ${miArrayRecuperado[index].name} ${miArrayRecuperado[index].score}`;\n  if (index % 2 !== 0) {\n    scoreList.classList.add('makeMeGray');\n  }\n}\n\n//# sourceURL=webpack://webpack-demo/./src/modules/createList.js?");
+
+/***/ }),
+
+/***/ "./src/modules/refreshList.js":
+/*!************************************!*\
+  !*** ./src/modules/refreshList.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ refreshList)\n/* harmony export */ });\nconst parentList = document.querySelector('.body-main-section-div1-lu-list');\nconst refreshButton = document.querySelector('.refreshButton');\n\nfunction refreshList() {\n  parentList.innerHTML = '';\n}\n\nlocalStorage.clear();\n\nrefreshButton.addEventListener('click', refreshList);\n\n//# sourceURL=webpack://webpack-demo/./src/modules/refreshList.js?");
+
+/***/ }),
+
+/***/ "./src/modules/saveLocalStorage.js":
+/*!*****************************************!*\
+  !*** ./src/modules/saveLocalStorage.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ saveLocalStorage)\n/* harmony export */ });\nconst arrayList = [];\n\nfunction saveLocalStorage(name, score, index) {\n  const objList = {\n    name,\n    score,\n    index,\n  };\n  arrayList.push(objList);\n  const arrayListString = JSON.stringify(arrayList);\n  localStorage.setItem('arrayListStringKey', arrayListString);\n}\n\n//# sourceURL=webpack://webpack-demo/./src/modules/saveLocalStorage.js?");
 
 /***/ })
 
