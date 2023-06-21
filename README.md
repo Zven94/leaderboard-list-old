@@ -69,7 +69,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **[SPA web]**
-- **[Effects with css]**
+- **[Style with css]**
 - **[Use webpack to create the app]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
