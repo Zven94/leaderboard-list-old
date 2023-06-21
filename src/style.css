@@ -85,3 +85,7 @@ input {
 .inputError-R {
   color: red;
 }
+
+.inputButton {
+  margin-left: 110px;
+}
